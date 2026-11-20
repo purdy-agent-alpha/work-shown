@@ -1,0 +1,115 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Privacy Policy · Work Shown publisher</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<main>
+<h1>Work Shown publisher Privacy Policy</h1>
+
+<p>Effective 20 November 2026.</p>
+
+<p>Work Shown publisher ("the tool") is the program that the YouTube channel
+<a href="https://www.youtube.com/@WorkShown">Work Shown</a> ("we") uses to update its
+own videos and to check each video's title, description, disclosure, captions and playlist against
+the channel's records. It uses the YouTube API Services. It is not offered to anyone else: it runs
+only on our computer, and only Work Shown's own account gives it access, signed in on our own devices.
+Google has not verified the app, which limits it to 100 accounts once it is in production. By using the tool, its user, the channel, agrees to be
+bound by the <a href="https://www.youtube.com/t/terms">YouTube Terms of Service</a>. What Google does with data
+is set out in the <a href="https://policies.google.com/privacy">Google Privacy Policy</a>.</p>
+
+<h2>1. What the tool accesses</h2>
+
+<p>Only what the channel's account grants on Google's consent screen, a single permission:
+<strong>"See, edit, and permanently delete your YouTube videos, ratings, comments and
+captions"</strong> (<code>youtube.force-ssl</code>). With it the tool updates the titles,
+descriptions and the altered or synthetic content disclosure of the channel's own videos, and reads
+the rest of each video's basic details and status settings (the API's <code>snippet</code> and
+<code>status</code>) so that an update keeps them as they are. It reads which
+caption tracks each video has and whether the channel's playlist holds it. It does not upload
+videos, and it does not read or write comments or ratings.</p>
+<p>The tool does not read the channel's statistics. It does not collect viewers' comments, names or
+any other information about viewers.</p>
+
+<h2>2. How it is used</h2>
+
+<p>Only to keep each video's title, description and disclosure as the channel's records give them,
+and to check those, its captions and its playlist against the records. Nothing is used for advertising or sold.</p>
+
+<h2>3. Where it is kept, and who else handles it</h2>
+<ul>
+<li>The tool runs on a computer we control. Its Google sign-in token is stored there, where only the
+tool's account can read it, and in that computer's weekly backup, which is encrypted before it leaves
+the computer. The tool does not store what it
+receives from YouTube: it compares it with the channel's records in the run that read it, and then
+discards it.</li>
+<li>The publishing records (what each video's title, description and playlist should be) are the
+channel's own, written by the channel, not taken from the API. They are kept on that computer, in a
+private GitHub repository, and in the same weekly backup. The description each
+video should carry is also published, on purpose, in that episode's public GitHub repository.</li>
+<li>The tool is run on that computer, under the same account, by two AI assistants: Claude Code, and
+Alpha (OpenClaw), the assistant that runs the channel. Claude Code uses Anthropic's Claude models, and
+so do Alpha's main models. They are told which of the tool's checks passed or failed, in terms of the
+channel's own records, the names of the details the tool changed and, when a call fails, its HTTP
+status; never the data YouTube sent back.</li>
+<li>The assistants' own conversations go to the AI model providers they use. Claude Code's go to
+Anthropic, which keeps them for up to 30 days (up to 2 years if one is flagged as breaking its usage
+policy, longer to resolve a dispute or where the law requires it, and 5 years
+for anything sent to it as feedback). Alpha's main models are reached through OpenRouter on Google
+Cloud (Vertex AI) and Amazon Bedrock, on routes that keep none of them; any other model it uses is
+reached through OpenRouter on routes that keep no data.</li>
+<li>Anthropic
+<a href="https://code.claude.com/docs/en/data-usage">says</a> it trains on conversations from accounts
+like ours only when their "Help improve Claude" setting is on; ours is off. Anything sent to it as
+feedback it may still use. OpenRouter
+<a href="https://openrouter.ai/docs/guides/privacy/provider-logging">lists</a> Google Vertex and
+Amazon Bedrock as providers that do not train on prompts, and
+<a href="https://cloud.google.com/vertex-ai/generative-ai/docs/data-governance">Google Cloud says</a>
+it does not use data sent to the models it serves on Vertex AI to train or fine-tune any model
+without the customer's permission or instruction.</li>
+</ul>
+<p>One more party sees what the assistants do: the computer's supervisor, a program that records what
+they do, whose own model calls also go through OpenRouter on routes that keep no data, and which sends
+its alerts only to us, by Telegram. None of these, and no one else, receives what the tool reads from
+YouTube, except where the law requires.</p>
+
+<h2>4. Cookies and advertising</h2>
+
+<p>The tool has no web interface. It places no cookies on anyone's device and shows no
+advertisements. This page is hosted by GitHub Pages, which
+<a href="https://docs.github.com/en/pages/getting-started-with-github-pages/what-is-github-pages#data-collection">logs
+each visitor's IP address</a> for security purposes, and GitHub's own
+<a href="https://docs.github.com/en/site-policy/privacy-policies/github-general-privacy-statement">privacy
+statement</a> covers visits to it.</p>
+
+<h2>5. How long it is kept, and how to remove it</h2>
+<ul>
+<li>The tool does not store data it receives through the YouTube API Services: it uses it in the run
+that reads it and then discards it, as YouTube's
+<a href="https://developers.google.com/youtube/terms/developer-policies">Developer Policies</a>
+allow. So nothing stays behind to expire or to delete when a video is removed or access is revoked.</li>
+<li>Access can be revoked at any time on Google's security settings page,
+<a href="https://security.google.com/settings/security/permissions">security.google.com/settings/security/permissions</a>.
+The tool can then no longer reach the account. The tool holds data about no one but the channel
+itself.</li>
+<li>Questions or complaints:
+<a href="mailto:purdy1agent1alpha@gmail.com">purdy1agent1alpha@gmail.com</a>.</li>
+<li>The tool deletes nothing on YouTube. To remove a video or its details from YouTube, use YouTube
+Studio.</li>
+</ul>
+
+<h2>6. Changes</h2>
+
+<p>If the tool ever reads or changes anything new, or is offered to anyone else, this policy changes first and
+the date above is updated.</p>
+</main>
+<footer>
+<a href="./">Work Shown publisher</a> · <a href="privacy.html">Privacy Policy</a> ·
+<a href="https://www.youtube.com/@WorkShown">Work Shown on YouTube</a> ·
+<a href="mailto:purdy1agent1alpha@gmail.com">Contact</a>
+</footer>
+</body>
+</html>
