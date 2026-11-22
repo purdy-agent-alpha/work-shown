@@ -10,13 +10,13 @@
 <main>
 <h1>Work Shown publisher Privacy Policy</h1>
 
-<p>Effective 20 November 2026.</p>
+<p>Effective 22 November 2026. The first version was effective 20 November 2026.</p>
 
 <p>Work Shown publisher ("the tool") is the program that the YouTube channel
-<a href="https://www.youtube.com/@WorkShown">Work Shown</a> ("we") uses to update its
+<a href="https://www.youtube.com/@WorkShown">Work Shown</a> ("we") uses to upload and update its
 own videos and to check each video's title, description, disclosure, captions and playlist against
 the channel's records. It uses the YouTube API Services. It is not offered to anyone else: it runs
-only on our computer, and only Work Shown's own account gives it access, signed in on our own devices.
+only on our computer, and only Work Shown's own account is given a way to sign in to it, on our own devices.
 Google has not verified the app, which limits it to 100 accounts once it is in production. By using the tool, its user, the channel, agrees to be
 bound by the <a href="https://www.youtube.com/t/terms">YouTube Terms of Service</a>. What Google does with data
 is set out in the <a href="https://policies.google.com/privacy">Google Privacy Policy</a>.</p>
@@ -25,19 +25,26 @@ is set out in the <a href="https://policies.google.com/privacy">Google Privacy P
 
 <p>Only what the channel's account grants on Google's consent screen, a single permission:
 <strong>"See, edit, and permanently delete your YouTube videos, ratings, comments and
-captions"</strong> (<code>youtube.force-ssl</code>). With it the tool updates the titles,
-descriptions and the altered or synthetic content disclosure of the channel's own videos, and reads
-the rest of each video's basic details and status settings (the API's <code>snippet</code> and
-<code>status</code>) so that an update keeps them as they are. It reads which
-caption tracks each video has and whether the channel's playlist holds it. It does not upload
-videos, and it does not read or write comments or ratings.</p>
+captions"</strong> (<code>youtube.force-ssl</code>).</p>
+<p>With it the tool uploads the channel's own videos, each as Private, sets their thumbnails, uploads
+their caption files and adds them to the channel's playlist. It sets each video's title, description,
+category, language and tags as the channel's records give them, and the same settings on every video:
+the altered or synthetic content disclosure, not made for kids, no paid product placement, the
+standard YouTube license, and embedding allowed. Once the tool's checks of a video pass and the channel has approved it, it
+changes the video from Private to Public.</p>
+<p>It reads the rest of each video's basic details and status settings (the API's <code>snippet</code> and <code>status</code>) so that an
+update keeps them as they are, and it reads which caption tracks each video has, whether the
+channel's playlist holds it, and whether it is public. It does not read or write comments or ratings,
+and it deletes nothing.</p>
 <p>The tool does not read the channel's statistics. It does not collect viewers' comments, names or
 any other information about viewers.</p>
 
 <h2>2. How it is used</h2>
 
-<p>Only to keep each video's title, description and disclosure as the channel's records give them,
-and to check those, its captions and its playlist against the records. Nothing is used for advertising or sold.</p>
+<p>Only to publish the channel's own episodes as the channel's records give them: to upload each one
+with its title, description, settings, thumbnail, captions and playlist, to keep those as the records
+give them, to check them against the records, and to make the video public once those checks pass and the channel has approved it.
+Nothing is used for advertising or sold.</p>
 
 <h2>3. Where it is kept, and who else handles it</h2>
 <ul>
@@ -46,8 +53,10 @@ tool's account can read it, and in that computer's weekly backup, which is encry
 the computer. The tool does not store what it
 receives from YouTube: it compares it with the channel's records in the run that read it, and then
 discards it.</li>
-<li>The publishing records (what each video's title, description and playlist should be) are the
-channel's own, written by the channel, not taken from the API. They are kept on that computer, in a
+<li>The publishing records (what each video's title, description, thumbnail, captions and playlist
+should be) are the channel's own, written by the channel, not taken from the API. That includes each
+video's id, which the channel copies from YouTube Studio after an upload; the tool does not keep the
+id the API returns. They are kept on that computer, in a
 private GitHub repository, and in the same weekly backup. The description each
 video should carry is also published, on purpose, in that episode's public GitHub repository.</li>
 <li>The tool is run on that computer, under the same account, by two AI assistants: Claude Code, and
@@ -57,8 +66,8 @@ channel's own records, the names of the details the tool changed and, when a cal
 status; never the data YouTube sent back.</li>
 <li>The assistants' own conversations go to the AI model providers they use. Claude Code's go to
 Anthropic, which keeps them for up to 30 days (up to 2 years if one is flagged as breaking its usage
-policy, longer to resolve a dispute or where the law requires it, and 5 years
-for anything sent to it as feedback). Alpha's main models are reached through OpenRouter on Google
+policy, as long as the law requires or a dispute needs, and 5 years for
+conversations sent to it with its feedback and bug-report commands). Alpha's main models are reached through OpenRouter on Google
 Cloud (Vertex AI) and Amazon Bedrock, on routes that keep none of them; any other model it uses is
 reached through OpenRouter on routes that keep no data.</li>
 <li>Anthropic
