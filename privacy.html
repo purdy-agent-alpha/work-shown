@@ -10,23 +10,29 @@
 <main>
 <h1>Work Shown publisher Privacy Policy</h1>
 
-<p>Effective 22 November 2026. The first version was effective 20 November 2026.</p>
+<p>Effective 23 November 2026. Earlier versions were effective 20 and 22 November 2026.</p>
 
 <p>Work Shown publisher ("the tool") is the program that the YouTube channel
 <a href="https://www.youtube.com/@WorkShown">Work Shown</a> ("we") uses to upload and update its
-own videos and to check each video's title, description, disclosure, captions and playlist against
-the channel's records. It uses the YouTube API Services. It is not offered to anyone else: it runs
-only on our computer, and only Work Shown's own account is given a way to sign in to it, on our own devices.
-Google has not verified the app, which limits it to 100 accounts once it is in production. By using the tool, its user, the channel, agrees to be
+own videos, to check each video's title, description, disclosure, captions and playlist against
+the channel's records, and, once that part is ready (section 1), to read the channel's own statistics
+for a short report on each episode.
+It uses the YouTube API Services.</p>
+<p>It is not offered to anyone else: it runs only on our computer, and only Work Shown's own account is
+given a way to sign in to it, on our own devices. Google has not verified the app, which limits it to 100 accounts once it is in production. By using the tool, its user, the channel, agrees to be
 bound by the <a href="https://www.youtube.com/t/terms">YouTube Terms of Service</a>. What Google does with data
 is set out in the <a href="https://policies.google.com/privacy">Google Privacy Policy</a>.</p>
 
 <h2>1. What the tool accesses</h2>
 
-<p>Only what the channel's account grants on Google's consent screen, a single permission:
-<strong>"See, edit, and permanently delete your YouTube videos, ratings, comments and
-captions"</strong> (<code>youtube.force-ssl</code>).</p>
-<p>With it the tool uploads the channel's own videos, each as Private, sets their thumbnails, uploads
+<p>Only what the channel's account grants on Google's consent screen, two permissions:</p>
+<ul>
+<li><strong>"See, edit, and permanently delete your YouTube videos, ratings, comments and
+captions"</strong> (<code>youtube.force-ssl</code>), to publish the channel's videos;</li>
+<li><strong>"View YouTube Analytics reports for your YouTube content"</strong>
+(<code>yt-analytics.readonly</code>), to read the channel's statistics.</li>
+</ul>
+<p>With the first, the tool uploads the channel's own videos, each as Private, sets their thumbnails, uploads
 their caption files and adds them to the channel's playlist. It sets each video's title, description,
 category, language and tags as the channel's records give them, and the same settings on every video:
 the altered or synthetic content disclosure, not made for kids, no paid product placement, the
@@ -36,23 +42,42 @@ changes the video from Private to Public.</p>
 update keeps them as they are, and it reads which caption tracks each video has, whether the
 channel's playlist holds it, and whether it is public. It does not read or write comments or ratings,
 and it deletes nothing.</p>
-<p>The tool does not read the channel's statistics. It does not collect viewers' comments, names or
-any other information about viewers.</p>
+<p>The second is new. The tool asks for it once the part that reads the statistics is ready, and
+until the channel grants it, the tool reads no statistics. Everything this page says about the
+statistics is what the tool will do from then on.</p>
+<p>With the second it reads YouTube's statistics for each of the channel's own videos:</p>
+<ul>
+<li>views, watch time and average view duration;</li>
+<li>how much of the video was watched at each point (audience retention);</li>
+<li>what kind of source the views came from (YouTube search, suggested videos, outside links and so on);</li>
+<li>day by day, how often its thumbnail was shown (impressions) and then clicked (click-through rate).
+These come from the YouTube Reporting API, so the tool also asks YouTube, once, to prepare that report
+each day.</li>
+</ul>
+<p>These are counts, averages and rates across all viewers. The tool does not ask for them by country,
+age, gender or device, and it collects nothing about any one viewer: no comments, names or other
+details.</p>
 
 <h2>2. How it is used</h2>
 
 <p>Only to publish the channel's own episodes as the channel's records give them: to upload each one
 with its title, description, settings, thumbnail, captions and playlist, to keep those as the records
-give them, to check them against the records, and to make the video public once those checks pass and the channel has approved it.
+give them, to check them against the records, and to make the video public once those checks pass and the channel has approved it.</p>
+<p>And, once it reads them, to report the statistics a week after each episode is released, so that the next episode's
+titles and thumbnails are chosen from what worked: to the channel, on a private page on our computer, and
+to a Claude model that helps make that choice (section 3). The report shows YouTube's numbers as YouTube
+gives them, with the dates they cover; the tool works out no scores of its own from them.
 Nothing is used for advertising or sold.</p>
 
 <h2>3. Where it is kept, and who else handles it</h2>
 <ul>
 <li>The tool runs on a computer we control. Its Google sign-in token is stored there, where only the
 tool's account can read it, and in that computer's weekly backup, which is encrypted before it leaves
-the computer. The tool does not store what it
-receives from YouTube: it compares it with the channel's records in the run that read it, and then
-discards it.</li>
+the computer. Apart from the statistics, the tool does not store what it receives from YouTube: it
+compares it with the channel's records in the run that read it, and then discards it.</li>
+<li>The statistics are the one thing it keeps. They are stored on that computer, in a folder only the
+tool's account can read, which is left out of the weekly backup and out of every repository. The
+channel's report page is made from that folder.</li>
 <li>The publishing records (what each video's title, description, thumbnail, captions and playlist
 should be) are the channel's own, written by the channel, not taken from the API. That includes each
 video's id, which the channel copies from YouTube Studio after an upload; the tool does not keep the
@@ -64,6 +89,9 @@ Alpha (OpenClaw), the assistant that runs the channel. Claude Code uses Anthropi
 so do Alpha's main models. They are told which of the tool's checks passed or failed, in terms of the
 channel's own records, the names of the details the tool changed and, when a call fails, its HTTP
 status; never the data YouTube sent back.</li>
+<li>The statistics are not shown to them either. The tool gives the report to a Claude model in a
+separate Claude Code session that keeps no log on the computer, and passes back only what that session
+chose for the next episode, without the numbers.</li>
 <li>The assistants' own conversations go to the AI model providers they use. Claude Code's go to
 Anthropic, which keeps them for up to 30 days (up to 2 years if one is flagged as breaking its usage
 policy, as long as the law requires or a dispute needs, and 5 years for
@@ -81,9 +109,9 @@ it does not use data sent to the models it serves on Vertex AI to train or fine-
 without the customer's permission or instruction.</li>
 </ul>
 <p>One more party sees what the assistants do: the computer's supervisor, a program that records what
-they do, whose own model calls also go through OpenRouter on routes that keep no data, and which sends
-its alerts only to us, by Telegram. None of these, and no one else, receives what the tool reads from
-YouTube, except where the law requires.</p>
+they do. Its own model calls also go through OpenRouter on routes that keep no data, and it sends its
+alerts only to us, by Telegram. Apart from the statistics that reach Anthropic as above, none of these,
+and no one else, receives what the tool reads from YouTube, except where the law requires.</p>
 
 <h2>4. Cookies and advertising</h2>
 
@@ -96,16 +124,22 @@ statement</a> covers visits to it.</p>
 
 <h2>5. How long it is kept, and how to remove it</h2>
 <ul>
-<li>The tool does not store data it receives through the YouTube API Services: it uses it in the run
-that reads it and then discards it, as YouTube's
+<li>Apart from the statistics, the tool does not store data it receives through the YouTube API
+Services: it uses it in the run that reads it and then discards it.</li>
+<li>The statistics are kept for as long as the channel uses them to compare its episodes. As YouTube's
 <a href="https://developers.google.com/youtube/terms/developer-policies">Developer Policies</a>
-allow. So nothing stays behind to expire or to delete when a video is removed or access is revoked.</li>
+require, the tool checks that the channel's permission still stands and that each video still exists:
+each day the computer is on, and when it starts. If the permission has been revoked, it deletes all of
+them; if a video has been deleted, that video's.</li>
 <li>Access can be revoked at any time on Google's security settings page,
 <a href="https://security.google.com/settings/security/permissions">security.google.com/settings/security/permissions</a>.
-The tool can then no longer reach the account. The tool holds data about no one but the channel
-itself.</li>
-<li>Questions or complaints:
-<a href="mailto:purdy1agent1alpha@gmail.com">purdy1agent1alpha@gmail.com</a>.</li>
+The tool can then no longer reach the account, and its next check deletes the statistics. The tool
+holds data about no one but the channel itself.</li>
+<li>To have the statistics deleted, or for questions or complaints, write to
+<a href="mailto:purdy1agent1alpha@gmail.com">purdy1agent1alpha@gmail.com</a>. They are deleted within
+7 days. Deleting them here changes nothing on YouTube.</li>
+<li>No other copy of them is kept on the computer: the assistants never see them, and the session that
+reads the report keeps no log. Anthropic deletes what it received as section 3 says.</li>
 <li>The tool deletes nothing on YouTube. To remove a video or its details from YouTube, use YouTube
 Studio.</li>
 </ul>
