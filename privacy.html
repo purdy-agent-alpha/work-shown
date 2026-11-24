@@ -10,16 +10,16 @@
 <main>
 <h1>Work Shown publisher Privacy Policy</h1>
 
-<p>Effective 23 November 2026. Earlier versions were effective 20 and 22 November 2026.</p>
+<p>Effective 24 November 2026. Earlier versions were effective 20, 22 and 23 November 2026.</p>
 
 <p>Work Shown publisher ("the tool") is the program that the YouTube channel
 <a href="https://www.youtube.com/@WorkShown">Work Shown</a> ("we") uses to upload and update its
 own videos, to check each video's title, description, disclosure, captions and playlist against
-the channel's records, and, once that part is ready (section 1), to read the channel's own statistics
+the channel's records, and to read the channel's own statistics
 for a short report on each episode.
 It uses the YouTube API Services.</p>
 <p>It is not offered to anyone else: it runs only on our computer, and only Work Shown's own account is
-given a way to sign in to it, on our own devices. Google has not verified the app, which limits it to 100 accounts once it is in production. By using the tool, its user, the channel, agrees to be
+given a way to sign in to it, on our own devices. Google has not verified the app, which limits it to 100 accounts. By using the tool, its user, the channel, agrees to be
 bound by the <a href="https://www.youtube.com/t/terms">YouTube Terms of Service</a>. What Google does with data
 is set out in the <a href="https://policies.google.com/privacy">Google Privacy Policy</a>.</p>
 
@@ -42,9 +42,6 @@ changes the video from Private to Public.</p>
 update keeps them as they are, and it reads which caption tracks each video has, whether the
 channel's playlist holds it, and whether it is public. It does not read or write comments or ratings,
 and it deletes nothing.</p>
-<p>The second is new. The tool asks for it once the part that reads the statistics is ready, and
-until the channel grants it, the tool reads no statistics. Everything this page says about the
-statistics is what the tool will do from then on.</p>
 <p>With the second it reads YouTube's statistics for each of the channel's own videos:</p>
 <ul>
 <li>views, watch time and average view duration;</li>
@@ -63,7 +60,7 @@ details.</p>
 <p>Only to publish the channel's own episodes as the channel's records give them: to upload each one
 with its title, description, settings, thumbnail, captions and playlist, to keep those as the records
 give them, to check them against the records, and to make the video public once those checks pass and the channel has approved it.</p>
-<p>And, once it reads them, to report the statistics a week after each episode is released, so that the next episode's
+<p>And to report the statistics a week after each episode is released, so that the next episode's
 titles and thumbnails are chosen from what worked: to the channel, on a private page on our computer, and
 to a Claude model that helps make that choice (section 3). The report shows YouTube's numbers as YouTube
 gives them, with the dates they cover; the tool works out no scores of its own from them.
@@ -76,7 +73,8 @@ tool's account can read it, and in that computer's weekly backup, which is encry
 the computer. Apart from the statistics, the tool does not store what it receives from YouTube: it
 compares it with the channel's records in the run that read it, and then discards it.</li>
 <li>The statistics are the one thing it keeps. They are stored on that computer, in a folder only the
-tool's account can read, which is left out of the weekly backup and out of every repository. The
+tool's account can read (the account the assistants run under; the tool never shows them its
+contents), which is left out of the weekly backup and out of every repository. The
 channel's report page is made from that folder.</li>
 <li>The publishing records (what each video's title, description, thumbnail, captions and playlist
 should be) are the channel's own, written by the channel, not taken from the API. That includes each
@@ -88,14 +86,14 @@ video should carry is also published, on purpose, in that episode's public GitHu
 Alpha (OpenClaw), the assistant that runs the channel. Claude Code uses Anthropic's Claude models, and
 so do Alpha's main models. They are told which of the tool's checks passed or failed, in terms of the
 channel's own records, the names of the details the tool changed and, when a call fails, its HTTP
-status; never the data YouTube sent back.</li>
+status, and how many daily reach reports it read and for how many videos it kept or deleted statistics; never the data YouTube sent back.</li>
 <li>The statistics are not shown to them either. The tool gives the report to a Claude model in a
 separate Claude Code session that keeps no log on the computer, and passes back only what that session
 chose for the next episode, without the numbers.</li>
 <li>The assistants' own conversations go to the AI model providers they use. Claude Code's go to
 Anthropic, which keeps them for up to 30 days (up to 2 years if one is flagged as breaking its usage
 policy, as long as the law requires or a dispute needs, and 5 years for
-conversations sent to it with its feedback and bug-report commands). Alpha's main models are reached through OpenRouter on Google
+conversations sent to it with its feedback, bug-report and share commands). Alpha's main models are reached through OpenRouter on Google
 Cloud (Vertex AI) and Amazon Bedrock, on routes that keep none of them; any other model it uses is
 reached through OpenRouter on routes that keep no data.</li>
 <li>Anthropic
@@ -110,8 +108,9 @@ without the customer's permission or instruction.</li>
 </ul>
 <p>One more party sees what the assistants do: the computer's supervisor, a program that records what
 they do. Its own model calls also go through OpenRouter on routes that keep no data, and it sends its
-alerts only to us, by Telegram. Apart from the statistics that reach Anthropic as above, none of these,
-and no one else, receives what the tool reads from YouTube, except where the law requires.</p>
+alerts only to us, by Telegram. Apart from the statistics that reach Anthropic as above, the tool gives
+what it reads from YouTube to none of these and to no one else, except where the law requires; it hands
+the statistics to that separate session as its input, never in a command.</p>
 
 <h2>4. Cookies and advertising</h2>
 
@@ -135,11 +134,12 @@ them; if a video has been deleted, that video's.</li>
 <a href="https://security.google.com/settings/security/permissions">security.google.com/settings/security/permissions</a>.
 The tool can then no longer reach the account, and its next check deletes the statistics. The tool
 holds data about no one but the channel itself.</li>
-<li>To have the statistics deleted, or for questions or complaints, write to
-<a href="mailto:purdy1agent1alpha@gmail.com">purdy1agent1alpha@gmail.com</a>. They are deleted within
-7 days. Deleting them here changes nothing on YouTube.</li>
-<li>No other copy of them is kept on the computer: the assistants never see them, and the session that
-reads the report keeps no log. Anthropic deletes what it received as section 3 says.</li>
+<li>The channel can have the statistics deleted at any time with the tool's delete command, which deletes
+them at once and stops the tool collecting them until the channel turns it back on. Deleting them here changes nothing on YouTube.</li>
+<li>For questions or complaints, write to
+<a href="mailto:purdy1agent1alpha@gmail.com">purdy1agent1alpha@gmail.com</a>.</li>
+<li>The tool keeps no other copy of them on the computer: the assistants that run the tool never see them, and the session that
+reads the report is started so that it keeps no log. Anthropic deletes what it received as section 3 says.</li>
 <li>The tool deletes nothing on YouTube. To remove a video or its details from YouTube, use YouTube
 Studio.</li>
 </ul>
